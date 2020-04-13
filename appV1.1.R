@@ -21,22 +21,6 @@ cfile<-"https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/cases.c
 
 covfile<-read.csv(cfile)
 
-#cfile<-"https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/cases.csv"
-#
-#covfile<-read.csv(cfile)
-#
-#covqc<- covfile %>% filter(province=="Quebec")%>% mutate(date=date_report)
-#
-#covqc$date_report<-as.Date(covqc$date, "%d-%m-%Y")  
-#
-#covdcount<- covqc %>% count(date_report) %>% mutate(cum=cumsum(n), dperc=((cum/lag(cum))-1)*100, dblt=log(2)/log((dperc/100)+1), cases=cum)
-#
-#covdcount<-covdcount %>% mutate(previous=cum-n)
-#
-#cov2<-covdcount %>% select(date_report,previous,n) %>% melt(id.var="date_report")
-#
-#cov3 <- covdcount %>% melt(id.var="date_report")
-
 
 library(shiny)
 
@@ -137,25 +121,13 @@ server <- function(input, output) {
       cov7
     })
     
-    output$comptext <- renderText({
-        x<-(input$house2+input$house3)/(input$house1+input$house4)
-        
-        #plot(covdcount$date_report,covdcount$cum)
-        
-        #paste("The percentage of the house owned is ", covfile[1,3],"%")
-        
-    })        
+       
     
     
     output$plot1<- renderPlotly({
         
 
-        
-        #g1<-ggplot(cov2,aes(x=factor(date_report),y=value,text = paste0("Percentage: ",value,"%", "\n")))+
-        #    geom_bar(stat="identity", aes(fill=forcats::fct_rev(variable)), position="stack")+
-        #    theme(axis.text.x = element_text(angle = 75, vjust = 0.5))+
-        #    labs(x="Date",y="Total Cases")+
-        #    ggtitle("Cumulative COVID-19 Cases in Quebec")
+   
         
         cov4 <- reactive({
         cov4 <- cov3() %>% filter(variable=="dperc")
