@@ -55,24 +55,6 @@
     server <- function(input, output) {
         
         
-      #  if (input$prov1!="Canada") then (
-      #  covqc <- reactive({
-      #      covqc1<- covfile %>% filter(province==input$prov1)%>% mutate(date=date_report)
-      #      covqc1$date_report<-as.Date(covqc1$date, "%d-%m-%Y")
-      #      covqc1
-      #  })
-      #  )
-      #  
-      #  if (input$prov1!="Canada") then (
-      #  covqc <- reactive({
-      #      covqc1<- covfile %>% filter(province %in% c("Alberta","BC", "Manitoba", "New Brunswick","Nova Scotia", "Ontario",  "PEI", "NL", "NWT", "Quebec", "Saskatchewan", "Yukon"))%>% mutate(date=date_report)
-      #      covqc1$date_report<-as.Date(covqc1$date, "%d-%m-%Y")
-      #      covqc1
-      #      })    
-      #      
-      #  )
-        
-        
         covqc<-reactive({
         
         if (input$prov1!="Canada") {
