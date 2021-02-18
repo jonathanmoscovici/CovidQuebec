@@ -8,7 +8,8 @@
     #if(!require(shinydashboard)) install.packages("shinydashboard", repos = "http://cran.us.r-project.org")
     library(shinydashboard)
     
-    cfile<-"https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/cases.csv"
+    #cfile<-"https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/cases.csv"
+    cfile<-"https://raw.githubusercontent.com/ccodwg/Covid19Canada/master/individual_level/cases_2021.csv"
     
     
     covfile<-read.csv(cfile)
@@ -17,7 +18,7 @@
     library(shiny)
     
     #header<- dashboardHeader(title = h4(HTML("Covid-19 Cases<br/>by Canadian Province")))
-    header<- dashboardHeader(title ="COVID-19 Cases by Canadian Province", titleWidth = 400)
+    header<- dashboardHeader(title ="2021 COVID-19 Cases by Canadian Province", titleWidth = 400)
     
     
     ui <- dashboardPage(
