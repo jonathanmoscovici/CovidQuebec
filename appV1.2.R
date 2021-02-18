@@ -9,6 +9,7 @@
     library(shinydashboard)
     
     #cfile<-"https://raw.githubusercontent.com/ishaberry/Covid19Canada/master/cases.csv"
+    
     cfile<-"https://raw.githubusercontent.com/ccodwg/Covid19Canada/master/individual_level/cases_2021.csv"
     
     
